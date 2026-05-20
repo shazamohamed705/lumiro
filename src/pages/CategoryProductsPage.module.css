@@ -1,0 +1,200 @@
+/* ══════════════════════════════
+   Category Products Page
+   prefix: (scoped via module)
+   ══════════════════════════════ */
+
+.page {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 6vw, 5rem);
+  background: rgba(160, 128, 105, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  min-height: 60vh;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  margin-top: -120px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+}
+
+/* ── Header row ── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.headingGroup {
+  text-align: right;
+}
+
+.title {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #102544;
+  margin: 0 0 0.2rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  color: #102544;
+  margin: 0;
+}
+
+/* ── Sort ── */
+.sortWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.sortLabel {
+  font-size: 0.85rem;
+  color: #102544;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.sortSelect {
+  padding: 6px 12px;
+  border: 1.5px solid #102544;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #102544;
+  background: rgba(255,255,255,0.7);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+  font-weight: 600;
+}
+
+.sortSelect:focus {
+  border-color: #102544;
+}
+
+/* ── Count ── */
+.count {
+  font-size: 0.82rem;
+  color: #102544;
+  font-weight: 600;
+  margin: 0 0 clamp(1rem, 2.5vw, 1.75rem);
+  text-align: right;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 340px));
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* ── Show More ── */
+.moreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.moreBtn {
+  padding: 0.65rem 3rem;
+  background: #a08069;
+  color: #fff;
+  border: none;
+  border-top-left-radius: clamp(14px, 2vw, 24px);
+  border-bottom-right-radius: clamp(14px, 2vw, 24px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.moreBtn:hover {
+  background: #8a6d57;
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding-inline: 0.875rem;
+    padding-top: 1.25rem;
+    margin-top: -80px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  /* العنوان والسورت في صف واحد */
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .headingGroup {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .title {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .subtitle {
+    font-size: 0.68rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* السورت يبقى compact */
+  .sortWrap {
+    flex-shrink: 0;
+    gap: 0.25rem;
+  }
+
+  .sortLabel {
+    display: none;
+  }
+
+  .sortSelect {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .count {
+    font-size: 0.72rem;
+    margin-bottom: 0.6rem;
+    text-align: right;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .moreBtn {
+    font-size: 0.82rem;
+    padding: 0.55rem 2rem;
+  }
+}

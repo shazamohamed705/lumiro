@@ -1,0 +1,104 @@
+/* ══════════════════════════════
+   PromoBanner Section
+   ══════════════════════════════ */
+
+.promo__section {
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+  background: #fff;
+}
+
+/* ── Wrapper: arrows + viewport ── */
+.promo__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+/* ── Embla viewport ── */
+.promo__viewport {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  border-radius: clamp(12px, 2vw, 24px);
+}
+
+/* ── Embla container ── */
+.promo__container {
+  display: flex;
+}
+
+/* ── Single slide ── */
+.promo__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}
+
+/* ── Slide image ── */
+.promo__img {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: clamp(12px, 2vw, 24px);
+}
+
+@media (max-width: 600px) {
+  .promo__img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── Arrow buttons ── */
+.promo__arrow {
+  flex-shrink: 0;
+  width: clamp(2rem, 3.5vw, 2.8rem);
+  height: clamp(2rem, 3.5vw, 2.8rem);
+  border-radius: 50%;
+  border: none;
+  background: #92735E;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, transform 0.15s;
+  z-index: 2;
+}
+
+.promo__arrow:hover {
+  background: #7a5f4d;
+  transform: scale(1.08);
+}
+
+.promo__arrow svg {
+  width: clamp(0.8rem, 1.2vw, 1rem);
+  height: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* ── Dots ── */
+.promo__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.promo__dot {
+  width: 1.75rem;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  transition: background 0.3s, width 0.3s;
+  padding: 0;
+}
+
+.promo__dotActive {
+  width: 2.5rem;
+  background: #92735E;
+}

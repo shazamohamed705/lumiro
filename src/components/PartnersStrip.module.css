@@ -1,0 +1,125 @@
+/* ══════════════════════════════
+   PartnersStrip Section
+   prefix: pstr__
+   ══════════════════════════════ */
+
+.pstr__section {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.pstr__header {
+  text-align: start;
+  padding-inline: clamp(1rem, 5vw, 4rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.pstr__title {
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #102544;
+  margin: 0 0 0.4rem;
+}
+
+.pstr__subtitle {
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  color: #999;
+  margin: 0;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* ── Marquee track ── */
+.pstr__track {
+  position: relative;
+  width: 100%;
+  height: clamp(70px, 10vw, 140px);
+  background: #F5F3F0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* fade edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+/* ── Rail (the moving strip) ── */
+.pstr__rail {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* LTR: scroll left */
+.pstr__railLtr {
+  animation: pstr__scrollLtr 28s linear infinite;
+}
+
+/* RTL: scroll right */
+.pstr__railRtl {
+  animation: pstr__scrollRtl 28s linear infinite;
+}
+
+.pstr__rail:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pstr__scrollLtr {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pstr__scrollRtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/* ── Single logo wrapper ── */
+.pstr__logoWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(90px, 11vw, 140px);
+  padding: 0 clamp(0.5rem, 1vw, 0.75rem);
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.pstr__logoWrap:hover {
+  opacity: 0.75;
+}
+
+/* ── Logo image ── */
+.pstr__logo {
+  height: 100%;
+  width: auto;
+  max-width: clamp(130px, 15vw, 200px);
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+/* ── Responsive: faster on mobile ── */
+@media (max-width: 480px) {
+  .pstr__railLtr,
+  .pstr__railRtl {
+    animation-duration: 18s;
+    gap: 1.25rem;
+  }
+}

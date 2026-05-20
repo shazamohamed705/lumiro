@@ -1,0 +1,137 @@
+/* ── Section ── */
+.section {
+  padding: 3rem 0 2rem;
+  background: #fff;
+}
+
+/* ── Header ── */
+.header {
+  text-align: right;
+  margin-bottom: 1.75rem;
+  padding-inline: 1.5rem;
+}
+
+.title {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #102544;
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  color: #888;
+  margin: 0;
+}
+
+/* ── Scroll track ── */
+.track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem; /* مسافة إضافية من الشمال قبل أول كارت */
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Image wrapper ── */
+.imgWrapper {
+  width: clamp(160px, 20vw, 265px);
+  height: clamp(125px, 15vw, 205px);
+  border-top-left-radius: clamp(28px, 3.5vw, 50px);
+  border-bottom-right-radius: clamp(28px, 3.5vw, 50px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  background: #f0ebe5;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.card:hover .img {
+  transform: scale(1.04);
+}
+
+/* ── Label ── */
+.label {
+  font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+  font-weight: 500;
+  color: #2d2d2d;
+  text-align: center;
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding-inline: 1.5rem;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 2.5rem;
+  background: transparent;
+  color: #a08069;
+  border: 1.5px solid #a08069;
+  border-top-left-radius: clamp(12px, 2vw, 20px);
+  border-bottom-right-radius: clamp(12px, 2vw, 20px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.viewAllBtn:hover {
+  background: #a08069;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 1.25rem;
+    padding-inline: 1rem;
+  }
+
+  .track {
+    padding-inline: 1rem;
+    gap: 1rem;
+  }
+}

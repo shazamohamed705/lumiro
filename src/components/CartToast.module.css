@@ -1,0 +1,206 @@
+/* ══════════════════════════════
+   Cart Toast Popup
+   prefix: ctst__
+   ══════════════════════════════ */
+
+/* ── Overlay (click outside to close) ── */
+.ctst__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 8888;
+  background: transparent;
+}
+
+/* ── Toast card ── */
+.ctst__toast {
+  position: fixed;
+  top: clamp(4.5rem, 8vw, 6rem);
+  inset-inline-end: clamp(0.75rem, 3vw, 2rem);
+  z-index: 8889;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  width: clamp(260px, 85vw, 360px);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: ctst__slideIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.ctst__toast[data-closing="true"] {
+  animation: ctst__slideOut 0.25s ease forwards;
+}
+
+@keyframes ctst__slideIn {
+  from { opacity: 0; transform: translateY(-16px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+@keyframes ctst__slideOut {
+  from { opacity: 1; transform: translateY(0)    scale(1); }
+  to   { opacity: 0; transform: translateY(-12px) scale(0.95); }
+}
+
+/* ── Header row ── */
+.ctst__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ctst__headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ctst__checkIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e6f4ea;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ctst__title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #102544;
+}
+
+.ctst__closeBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.ctst__closeBtn:hover {
+  background: #eee;
+}
+
+/* ── Product row ── */
+.ctst__product {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ctst__productImg {
+  width: clamp(52px, 10vw, 68px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  flex-shrink: 0;
+  background: #f7f4f1;
+}
+
+.ctst__productInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ctst__productName {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #102544;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ctst__productMeta {
+  font-size: 0.75rem;
+  color: #a08069;
+  font-weight: 600;
+}
+
+.ctst__productPrice {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #102544;
+}
+
+/* ── Actions ── */
+.ctst__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ctst__btnCart {
+  flex: 1;
+  height: 40px;
+  background: #102544;
+  color: #fff;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 16px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 16px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctst__btnCart:hover {
+  background: #1a3a6b;
+}
+
+.ctst__btnContinue {
+  flex: 1;
+  height: 40px;
+  background: transparent;
+  color: #a08069;
+  border: 1.5px solid #a08069;
+  border-top-left-radius: clamp(10px, 1.5vw, 16px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 16px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ctst__btnContinue:hover {
+  background: #a08069;
+  color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 400px) {
+  .ctst__toast {
+    inset-inline-end: 0.5rem;
+    inset-inline-start: 0.5rem;
+    width: auto;
+  }
+
+  .ctst__actions {
+    flex-direction: column;
+  }
+}

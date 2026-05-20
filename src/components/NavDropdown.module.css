@@ -1,0 +1,113 @@
+/* ══════════════════════════════
+   Navbar Products Dropdown
+   ══════════════════════════════ */
+
+.ndp__wrap {
+  position: relative;
+}
+
+.ndp__trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #2d2d2d;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.ndp__trigger:hover { opacity: 0.6; }
+
+.ndp__triggerActive {
+  font-weight: 700;
+}
+
+.ndp__chevron {
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.ndp__chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown panel ── */
+.ndp__panel {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 0.5rem;
+  z-index: 100;
+  animation: ndp__fadeIn 0.15s ease;
+}
+
+@keyframes ndp__fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Category item ── */
+.ndp__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.ndp__item::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a08069;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+.ndp__item:hover {
+  background: #f5ede5;
+  color: #102544;
+}
+
+.ndp__item:hover::before {
+  opacity: 1;
+}
+
+/* ── View all link ── */
+.ndp__viewAll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid #f0e8e0;
+  text-decoration: none;
+  color: #102544;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 0 0 12px 12px;
+  transition: background 0.15s;
+}
+
+.ndp__viewAll:hover { background: #f5ede5; }

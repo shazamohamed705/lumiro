@@ -1,0 +1,75 @@
+/* ══════════════════════════════
+   Dashboard Points Tab
+   ══════════════════════════════ */
+
+.dpts__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dpts__pageTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #102544;
+  margin: 0;
+}
+
+/* ── Balance card ── */
+.dpts__card {
+  background: #F5F3F0;
+  border-top-left-radius: clamp(20px, 3vw, 40px);
+  border-bottom-right-radius: clamp(20px, 3vw, 40px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
+  box-shadow: 0px 4px 4px 0px #92735E;
+  text-align: center;
+}
+
+.dpts__desc {
+  font-size: clamp(0.88rem, 1.3vw, 1rem);
+  color: #555;
+  margin: 0 0 0.5rem;
+  line-height: 1.7;
+}
+
+.dpts__balanceLabel {
+  font-size: clamp(0.88rem, 1.3vw, 1rem);
+  color: #555;
+  margin: 0 0 0.25rem;
+}
+
+.dpts__balanceValue {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #102544;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── CTA button ── */
+.dpts__ctaWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.dpts__ctaBtn {
+  padding: 0.65rem 2.5rem;
+  background: #102544;
+  color: #fff;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 18px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 18px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dpts__ctaBtn:hover { background: #1a3a6b; }

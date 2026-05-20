@@ -1,0 +1,276 @@
+/* ══════════════════════════════
+   Dashboard Profile Tab
+   ══════════════════════════════ */
+
+.dpr__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dpr__card {
+  background: #F5F3F0;
+  border-top-left-radius: clamp(20px, 3vw, 40px);
+  border-bottom-right-radius: clamp(20px, 3vw, 40px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow: 0px 4px 4px 0px #92735E;
+}
+
+.dpr__sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #102544;
+  margin-bottom: 1rem;
+}
+
+/* ── Info fields ── */
+.dpr__fieldRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f5ede5;
+  gap: 1rem;
+}
+
+.dpr__fieldRow:last-child { border-bottom: none; }
+
+.dpr__fieldLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #a08069;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dpr__fieldValue {
+  font-size: 0.88rem;
+  color: #333;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+
+.dpr__editBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a08069;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.dpr__editBtn:hover { color: #102544; }
+
+/* ── Birthday ── */
+.dpr__birthdayRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.dpr__selectWrap { flex: 1; min-width: 80px; }
+
+.dpr__select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid #e8d5be;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.82rem;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a08069' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 0.5rem center;
+  padding-left: 1.75rem;
+}
+
+.dpr__saveBtn {
+  padding: 0.5rem 1.25rem;
+  background: #102544;
+  color: #fff;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 18px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 18px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.dpr__saveBtn:hover { background: #1a3a6b; }
+
+/* ── Address ── */
+.dpr__addressEmpty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #aaa;
+  padding: 0.5rem 0;
+  flex: 1;
+}
+
+.dpr__addressRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dpr__addBtn {
+  padding: 0.5rem 1.25rem;
+  background: #102544;
+  color: #fff;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 18px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 18px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.dpr__addBtn:hover { background: #1a3a6b; }
+
+/* ── Password ── */
+.dpr__passField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.dpr__passLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #102544;
+  text-align: right;
+}
+
+.dpr__passInputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e8d5be;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dpr__passInput {
+  flex: 1;
+  padding: 0.55rem 0.75rem 0.55rem 2.5rem;
+  border: none;
+  outline: none;
+  font-size: 0.85rem;
+  color: #333;
+  background: transparent;
+  text-align: right;
+  direction: rtl;
+}
+
+.dpr__passEye {
+  position: absolute;
+  inset-inline-start: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a08069;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.dpr__passEye:hover { color: #102544; }
+
+/* ── Bottom actions ── */
+.dpr__bottomActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.dpr__logoutBtn {
+  padding: 0.65rem 2rem;
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 18px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 18px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dpr__logoutBtn:hover { background: #c53030; }
+
+.dpr__logoutAllBtn {
+  font-size: 0.78rem;
+  color: #a08069;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .dpr__card {
+    padding: 1.25rem 1rem;
+  }
+
+  .dpr__fieldLabel {
+    font-size: 0.88rem;
+  }
+
+  .dpr__fieldValue {
+    font-size: 0.95rem;
+  }
+
+  .dpr__select {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.75rem 0.6rem 1.75rem;
+  }
+
+  .dpr__saveBtn,
+  .dpr__addBtn {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .dpr__passInput {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.75rem 0.65rem 2.5rem;
+  }
+
+  .dpr__logoutBtn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}

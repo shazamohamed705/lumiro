@@ -1,0 +1,331 @@
+/* ══════════════════════════════
+   HomeOffers Section
+   ══════════════════════════════ */
+
+.offers__section {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 5vw, 3rem);
+  background: #fff;
+}
+
+/* ── Section header ── */
+.offers__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.offers__headingGroup {
+  text-align: right;
+}
+
+.offers__title {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #102544;
+  margin: 0 0 0.2rem;
+}
+
+.offers__subtitle {
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  color: #888;
+  margin: 0;
+}
+
+.offers__viewAll {
+  font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+  color: #102544;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+  align-self: flex-end;
+  transition: opacity 0.2s;
+}
+
+.offers__viewAll:hover {
+  opacity: 0.65;
+}
+
+/* ── Carousel outer wrapper (arrows + embla) ── */
+.offers__carouselWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Embla viewport ── */
+.offers__embla {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 1rem;
+  margin-bottom: -1rem;
+}
+
+/* ── Embla container ── */
+.offers__emblaContainer {
+  display: flex;
+}
+
+/* ── Single slide — 3 visible at once ── */
+.offers__slide {
+  flex: 0 0 calc(100% / 3.5);
+  min-width: 0;
+  padding-inline-end: 1rem;
+}
+
+@media (max-width: 768px) {
+  .offers__slide {
+    flex: 0 0 calc(100% / 1.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .offers__slide {
+    flex: 0 0 85%;
+  }
+}
+
+/* ── Arrow buttons ── */
+.offers__arrow {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: background 0.2s, border-color 0.2s;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.offers__arrow:hover {
+  background: #f5f0eb;
+  border-color: #bbb;
+}
+
+.offers__arrow svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ── Single card ── */
+.offers__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top-left-radius: clamp(36px, 5vw, 70px);
+  border-bottom-right-radius: clamp(36px, 5vw, 70px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px #92735E;
+  transition: box-shadow 0.25s, transform 0.25s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.offers__card:hover {
+  box-shadow: 0px 6px 8px 0px #92735E;
+  transform: translateY(-3px);
+}
+
+/* ── Image area ── */
+.offers__imgBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 360 / 240;
+  overflow: hidden;
+  background: #f5ede5;
+}
+
+.offers__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.offers__card:hover .offers__img {
+  transform: scale(1.04);
+}
+
+/* ── Category badge ── */
+.offers__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(16, 37, 68, 0.85);
+  color: #fff;
+  font-size: clamp(0.65rem, 0.9vw, 0.78rem);
+  font-weight: 600;
+  width: clamp(120px, 14vw, 183px);
+  height: clamp(34px, 4vw, 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: clamp(40px, 5.5vw, 70px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Wishlist button ── */
+.offers__wish {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  width: clamp(1.8rem, 2.5vw, 2.2rem);
+  height: clamp(1.8rem, 2.5vw, 2.2rem);
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+}
+
+.offers__wish:hover {
+  transform: scale(1.15);
+}
+
+.offers__wish svg {
+  width: clamp(0.85rem, 1.2vw, 1rem);
+  height: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+/* ── Card body ── */
+.offers__body {
+  padding: clamp(0.75rem, 1.5vw, 1.1rem) clamp(0.75rem, 1.5vw, 1.1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: right;
+  flex: 1;
+}
+
+.offers__name.offers__name {
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  font-weight: 600;
+  color: #102544;
+  margin: 0;
+  line-height: 1.4;
+  width: 100%;
+  text-align: right;
+}
+
+.offers__viewLink {
+  font-size: clamp(0.7rem, 0.95vw, 0.8rem);
+  color: #102544;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.offers__viewLink:hover {
+  opacity: 0.65;
+}
+
+/* ── View row — يمين ── */
+.offers__viewRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Price row — يسار ── */
+.offers__priceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.offers__priceLabel {
+  font-size: clamp(0.78rem, 1vw, 0.88rem);
+  color: #555;
+  font-weight: 500;
+}
+
+.offers__price {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  color: #8D6F5B;
+}
+
+.offers__priceOld {
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+/* ── Add to cart button ── */
+.offers__addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: clamp(200px, 100%, 249px);
+  height: clamp(42px, 5vw, 50px);
+  padding: 10px;
+  background: #102544;
+  color: #fff;
+  font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+  font-weight: 600;
+  border: none;
+  border-top-left-radius: clamp(18px, 2.5vw, 30px);
+  border-bottom-right-radius: clamp(18px, 2.5vw, 30px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: auto;
+}
+
+.offers__addBtn:hover {
+  background: #1a3a6b;
+  transform: translateY(-1px);
+}
+
+.offers__addBtn svg {
+  width: clamp(0.9rem, 1.2vw, 1.05rem);
+  height: clamp(0.9rem, 1.2vw, 1.05rem);
+}
+
+/* ── Clickable image link ── */
+.offers__imgLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Clickable name link ── */
+.offers__nameLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.offers__nameLink:hover {
+  color: #102544;
+}

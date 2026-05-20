@@ -1,0 +1,380 @@
+/* ══════════════════════════════
+   HomeProducts Section
+   prefix: hprod__
+   ══════════════════════════════ */
+
+.hprod__section {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(2rem, 8vw, 6rem);
+  background: #fff;
+}
+
+/* ── Header ── */
+.hprod__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hprod__headingGroup {
+  text-align: right;
+}
+
+.hprod__title {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #102544;
+  margin: 0 0 0.2rem;
+}
+
+.hprod__subtitle {
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  color: #888;
+  margin: 0;
+}
+
+/* ── Filter bar ── */
+.hprod__filters {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  justify-content: center;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  border: 2px solid #102544;
+  border-radius: 999px;
+  background: rgba(16, 37, 68, 0.85);
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  scrollbar-width: none;
+}
+
+.hprod__filters::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .hprod__filters {
+    max-width: calc(100% - 0rem);
+    justify-content: flex-start;
+    padding: 0.35rem 0.6rem;
+    gap: 0.25rem;
+  }
+
+  .hprod__filterBtn {
+    padding: 0.3rem 0.85rem;
+    font-size: 0.72rem;
+  }
+}
+
+.hprod__filterBtn {
+  padding: 0.4rem 1.2rem;
+  font-size: clamp(0.78rem, 1.1vw, 0.9rem);
+  font-weight: 500;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hprod__filterBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.hprod__filterBtnActive {
+  background: #fff;
+  color: #102544;
+}
+
+.hprod__filterBtnActive:hover {
+  background: #fff;
+  color: #102544;
+}
+
+/* ── Grid (desktop) / Scroll row (mobile) ── */
+.hprod__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 340px));
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hprod__gridItem {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .hprod__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.75rem;
+    padding-bottom: 12px;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+    margin-inline: calc(-1 * clamp(1rem, 4vw, 2rem));
+    margin-bottom: calc(clamp(1.5rem, 3vw, 2.5rem) - 12px);
+    scrollbar-width: none;
+    cursor: grab;
+  }
+
+  .hprod__grid:active {
+    cursor: grabbing;
+  }
+
+  .hprod__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hprod__gridItem {
+    flex: 0 0 45vw;
+    scroll-snap-align: start;
+  }
+}
+
+/* ── Embla slider (mobile) — unused, kept for safety ── */
+.hprod__emblaViewport { display: none; }
+.hprod__emblaContainer { display: flex; }
+.hprod__emblaSlide { flex: 0 0 45vw; min-width: 0; }
+
+/* ── Single card ── */
+.hprod__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top-left-radius: clamp(20px, 3vw, 50px);
+  border-bottom-right-radius: clamp(20px, 3vw, 50px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px #92735E;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+/* ── Image box ── */
+.hprod__imgBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f5ede5;
+}
+
+.hprod__card:hover {
+  box-shadow: 0px 6px 10px 0px #92735E;
+  transform: translateY(-3px);
+}
+
+.hprod__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hprod__card:hover .hprod__img {
+  transform: scale(1.04);
+}
+
+/* ── Badge ── */
+.hprod__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(16, 37, 68, 0.85);
+  color: #fff;
+  font-size: clamp(0.58rem, 0.8vw, 0.7rem);
+  font-weight: 600;
+  width: clamp(80px, 10vw, 140px);
+  height: clamp(24px, 2.8vw, 38px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: clamp(22px, 3.5vw, 55px);
+  backdrop-filter: blur(4px);
+}
+
+/* ── Wish button ── */
+.hprod__wish {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  width: clamp(1.7rem, 2.5vw, 2.2rem);
+  height: clamp(1.7rem, 2.5vw, 2.2rem);
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+}
+
+.hprod__wish:hover { transform: scale(1.15); }
+
+.hprod__wish svg {
+  width: clamp(0.8rem, 1.2vw, 1rem);
+  height: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* ── Card body ── */
+.hprod__body {
+  padding: clamp(0.4rem, 1vw, 0.65rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.hprod__name {
+  font-size: clamp(0.7rem, 1vw, 0.82rem);
+  font-weight: 600;
+  color: #8D6F5B;
+  margin: 0;
+  line-height: 1.3;
+  width: 100%;
+  text-align: right;
+}
+
+.hprod__viewRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hprod__viewLink {
+  font-size: clamp(0.68rem, 0.95vw, 0.8rem);
+  color: #102544;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.hprod__viewLink:hover { opacity: 0.65; }
+
+.hprod__priceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.hprod__priceLabel {
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  color: #555;
+  font-weight: 500;
+}
+
+.hprod__price {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: #8D6F5B;
+}
+
+.hprod__priceOld {
+  font-size: clamp(0.72rem, 1vw, 0.82rem);
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+/* ── Add to cart ── */
+.hprod__addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  max-width: 180px;
+  height: clamp(28px, 3vw, 38px);
+  padding: 5px 8px;
+  background: #102544;
+  color: #fff;
+  font-size: clamp(0.62rem, 0.9vw, 0.76rem);
+  font-weight: 600;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 20px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 20px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: auto;
+}
+
+.hprod__addBtn:hover {
+  background: #1a3a6b;
+  transform: translateY(-1px);
+}
+
+.hprod__addBtn svg {
+  width: clamp(0.85rem, 1.2vw, 1rem);
+  height: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+/* ── View more button ── */
+.hprod__moreWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.hprod__moreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 2.5rem;
+  background: #A08069;
+  color: #fff;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 600;
+  border: 2px solid #A08069;
+  border-top-left-radius: clamp(16px, 2.5vw, 30px);
+  border-bottom-right-radius: clamp(16px, 2.5vw, 30px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hprod__moreBtn:hover {
+  background: #8a6d57;
+  border-color: #8a6d57;
+  color: #fff;
+}
+
+/* ── Clickable image link ── */
+.hprod__imgLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Clickable name link ── */
+.hprod__nameLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hprod__nameLink:hover {
+  color: #102544;
+}

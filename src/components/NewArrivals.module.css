@@ -1,0 +1,311 @@
+/* ══════════════════════════════
+   NewArrivals Section
+   prefix: narv__
+   ══════════════════════════════ */
+
+.narv__section {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 5vw, 3rem);
+  background: #fff;
+}
+
+/* ── Header ── */
+.narv__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.narv__headingGroup {
+  text-align: start;
+}
+
+.narv__title {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #102544;
+  margin: 0 0 0.2rem;
+}
+
+.narv__subtitle {
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  color: #888;
+  margin: 0;
+}
+
+/* ── Slider row ── */
+.narv__sliderRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  width: 100%;
+}
+
+/* ── Arrow buttons ── */
+.narv__arrow {
+  flex-shrink: 0;
+  width: clamp(2rem, 3.5vw, 2.8rem);
+  height: clamp(2rem, 3.5vw, 2.8rem);
+  border-radius: 50%;
+  border: none;
+  background: #A08069;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.15s;
+  z-index: 2;
+}
+
+.narv__arrow:hover {
+  background: #8a6d57;
+  transform: scale(1.08);
+}
+
+.narv__arrow svg {
+  width: clamp(0.8rem, 1.2vw, 1rem);
+  height: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* ── Embla viewport ── */
+.narv__viewport {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+  cursor: grab;
+}
+
+.narv__viewport:active {
+  cursor: grabbing;
+}
+
+/* ── Embla container ── */
+.narv__container {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ── Slide item ── */
+/* Desktop: 3 visible */
+.narv__slideItem {
+  flex: 0 0 calc(100% / 3.5);
+  min-width: 0;
+  padding-inline-end: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+@media (max-width: 900px) {
+  .narv__slideItem {
+    flex: 0 0 calc(100% / 2.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .narv__slideItem {
+    flex: 0 0 75%;
+  }
+}
+
+/* ── Single card ── */
+.narv__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top-left-radius: clamp(20px, 3vw, 50px);
+  border-bottom-right-radius: clamp(20px, 3vw, 50px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px #92735E;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.narv__card:hover {
+  box-shadow: 0px 6px 10px 0px #92735E;
+  transform: translateY(-3px);
+}
+
+/* ── Image box ── */
+.narv__imgBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f5ede5;
+}
+
+.narv__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.narv__card:hover .narv__img {
+  transform: scale(1.04);
+}
+
+/* ── Badge ── */
+.narv__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(16, 37, 68, 0.85);
+  color: #fff;
+  font-size: clamp(0.58rem, 0.8vw, 0.72rem);
+  font-weight: 600;
+  width: clamp(90px, 11vw, 160px);
+  height: clamp(26px, 3vw, 42px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: clamp(22px, 3.5vw, 55px);
+  backdrop-filter: blur(4px);
+}
+
+/* ── Wish button ── */
+.narv__wish {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  width: clamp(1.7rem, 2.5vw, 2.2rem);
+  height: clamp(1.7rem, 2.5vw, 2.2rem);
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s;
+}
+
+.narv__wish:hover { transform: scale(1.15); }
+
+.narv__wish svg {
+  width: clamp(0.8rem, 1.2vw, 1rem);
+  height: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* ── Card body ── */
+.narv__body {
+  padding: clamp(0.5rem, 1vw, 0.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.narv__name {
+  font-size: clamp(0.72rem, 1vw, 0.84rem);
+  font-weight: 600;
+  color: #8D6F5B;
+  margin: 0;
+  line-height: 1.3;
+  width: 100%;
+  text-align: start;
+}
+
+.narv__viewRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.narv__viewLink {
+  font-size: clamp(0.68rem, 0.95vw, 0.8rem);
+  color: #102544;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.narv__viewLink:hover { opacity: 0.65; }
+
+.narv__priceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.narv__priceLabel {
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  color: #555;
+  font-weight: 500;
+}
+
+.narv__price {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: #8D6F5B;
+}
+
+.narv__priceOld {
+  font-size: clamp(0.72rem, 1vw, 0.82rem);
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+/* ── Add to cart button ── */
+.narv__addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  max-width: 180px;
+  height: clamp(28px, 3vw, 38px);
+  padding: 5px 8px;
+  background: #102544;
+  color: #fff;
+  font-size: clamp(0.62rem, 0.9vw, 0.76rem);
+  font-weight: 600;
+  border: none;
+  border-top-left-radius: clamp(10px, 1.5vw, 20px);
+  border-bottom-right-radius: clamp(10px, 1.5vw, 20px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: auto;
+}
+
+.narv__addBtn:hover {
+  background: #1a3a6b;
+  transform: translateY(-1px);
+}
+
+.narv__addBtn svg {
+  width: clamp(0.85rem, 1.2vw, 1rem);
+  height: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+/* ── Clickable image link ── */
+.narv__imgLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Clickable name link ── */
+.narv__nameLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.narv__nameLink:hover {
+  color: #102544;
+}

@@ -1,0 +1,105 @@
+/* ══════════════════════════════
+   SecondBanner Section
+   prefix: sbnr__
+   ══════════════════════════════ */
+
+.sbnr__section {
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+  background: #fff;
+}
+
+/* ── Wrapper: arrows + viewport ── */
+.sbnr__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+/* ── Embla viewport ── */
+.sbnr__viewport {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  border-radius: clamp(12px, 2vw, 24px);
+}
+
+/* ── Embla container ── */
+.sbnr__container {
+  display: flex;
+}
+
+/* ── Single slide ── */
+.sbnr__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}
+
+/* ── Slide image ── */
+.sbnr__img {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: clamp(12px, 2vw, 24px);
+}
+
+@media (max-width: 600px) {
+  .sbnr__img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── Arrow buttons ── */
+.sbnr__arrow {
+  flex-shrink: 0;
+  width: clamp(2rem, 3.5vw, 2.8rem);
+  height: clamp(2rem, 3.5vw, 2.8rem);
+  border-radius: 50%;
+  border: none;
+  background: #A08069;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.15s;
+  z-index: 2;
+}
+
+.sbnr__arrow:hover {
+  background: #8a6d57;
+  transform: scale(1.08);
+}
+
+.sbnr__arrow svg {
+  width: clamp(0.8rem, 1.2vw, 1rem);
+  height: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* ── Dots ── */
+.sbnr__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.sbnr__dot {
+  width: 1.75rem;
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  transition: background 0.3s, width 0.3s;
+  padding: 0;
+}
+
+.sbnr__dotActive {
+  width: 2.5rem;
+  background: #A08069;
+}

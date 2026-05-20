@@ -1,0 +1,458 @@
+/* ══════════════════════════════
+   Blog Post Page
+   ══════════════════════════════ */
+
+.page {
+  background: #fff;
+  min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 45vw, 500px);
+  overflow: hidden;
+  margin-top: 0;
+  border-bottom-left-radius: clamp(24px, 5vw, 60px);
+  border-bottom-right-radius: clamp(24px, 5vw, 60px);
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+/* Top action buttons */
+.heroActions {
+  position: absolute;
+  top: 2.5rem;
+  inset-inline-end: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.heroActionBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+}
+
+.heroActionBtn:hover { transform: scale(1.1); }
+
+/* Next arrow */
+.heroNext {
+  position: absolute;
+  top: 50%;
+  inset-inline-start: 1rem;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.heroNext:hover { background: #fff; }
+
+/* Badge */
+.heroBadge {
+  position: absolute;
+  bottom: 1.25rem;
+  inset-inline-end: 1.25rem;
+  background: rgba(16, 37, 68, 0.88);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.55rem 1.5rem;
+  border-bottom-left-radius: clamp(24px, 5vw, 60px);
+  border-top-right-radius: clamp(24px, 5vw, 60px);
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.02em;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 3vw, 2rem);
+}
+
+/* ── Title ── */
+.title {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: #102544;
+  margin: 0 0 0.75rem;
+  line-height: 1.35;
+}
+
+/* ── Meta ── */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: #a08069;
+  font-weight: 500;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #f0e8e0;
+  margin: 0.75rem 0 1.25rem;
+}
+
+/* ── Intro ── */
+.intro {
+  font-size: clamp(0.88rem, 1.3vw, 1rem);
+  color: #444;
+  line-height: 1.85;
+  margin: 0 0 1.5rem;
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 1.25rem;
+}
+
+.secHead {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  color: #a08069;
+  margin: 0 0 0.4rem;
+}
+
+.secBody {
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Tip box ── */
+.tipBox {
+  background: #f5ede5;
+  border-radius: 12px;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 1.5rem 0;
+  border-inline-start: 3px solid #a08069;
+}
+
+.tipLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #a08069;
+  margin: 0 0 0.35rem;
+}
+
+.tipText {
+  font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+  color: #777;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Tags ── */
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: #f5ede5;
+  color: #a08069;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tag:hover {
+  background: #a08069;
+  color: #fff;
+}
+
+/* ── Related ── */
+.related {
+  border-top: 1px solid #f0e8e0;
+  padding-top: 1.5rem;
+}
+
+.relTitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 800;
+  color: #102544;
+  margin: 0 0 1rem;
+}
+
+/* Slider */
+.relSlider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Embla viewport */
+.relViewport {
+  flex: 1;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.relViewport:active {
+  cursor: grabbing;
+}
+
+.relTrack {
+  display: flex;
+  gap: 0.75rem;
+  touch-action: pan-y pinch-zoom;
+  margin-inline: calc(0.75rem * -0.5);
+}
+
+.relItem {
+  flex: 0 0 calc((100% - 1.5rem) / 3);
+  min-width: 0;
+  padding-inline: calc(0.75rem * 0.5);
+}
+
+@media (max-width: 700px) {
+  .relItem { flex: 0 0 calc((100% - 0.75rem) / 2); }
+}
+
+/* Dots */
+.relDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.relDot {
+  width: 28px;
+  height: 5px;
+  border-radius: 3px;
+  border: none;
+  background: #e0d0c0;
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s;
+  padding: 0;
+}
+
+.relDotActive {
+  background: #a08069;
+  width: 44px;
+}
+
+.relArrow {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #a08069;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.relArrow:hover {
+  background: #8a6d57;
+  transform: scale(1.08);
+}
+
+/* ── Related card ── */
+.relCard {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-top-left-radius: clamp(16px, 2.5vw, 30px);
+  border-bottom-right-radius: clamp(16px, 2.5vw, 30px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px 0px #92735E;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.relCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 10px 0px #92735E;
+}
+
+.relImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f5ede5;
+}
+
+.relImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.relCard:hover .relImg { transform: scale(1.04); }
+
+.relBadge {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  background: rgba(16,37,68,0.88);
+  color: #fff;
+  font-size: clamp(0.6rem, 0.85vw, 0.72rem);
+  font-weight: 700;
+  width: clamp(90px, 11vw, 140px);
+  height: clamp(28px, 3.2vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-end-start-radius: clamp(14px, 2vw, 24px);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.relHeart {
+  position: absolute;
+  top: 0.5rem;
+  inset-inline-start: 0.5rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+}
+
+.relHeart:hover { transform: scale(1.15); }
+.relHeart svg { width: 12px; height: 12px; }
+
+.relBody {
+  padding: clamp(0.5rem, 1.2vw, 0.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.relTitle2 { display: none; }
+
+.relTitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 800;
+  color: #102544;
+  margin: 0 0 1rem;
+}
+
+.relCardTitle {
+  font-size: clamp(0.72rem, 1vw, 0.82rem);
+  font-weight: 600;
+  color: #102544;
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.relMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: auto;
+}
+
+.relMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  color: #a08069;
+  font-weight: 500;
+}
+
+.relBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.45rem;
+  background: #102544;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-top-left-radius: clamp(8px, 1.2vw, 14px);
+  border-bottom-right-radius: clamp(8px, 1.2vw, 14px);
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-top: 0.4rem;
+  transition: background 0.2s;
+}
+
+.relBtn:hover { background: #1a3a6b; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 1rem;
+    padding-top: 3rem;
+  }
+  .hero { height: clamp(320px, 75vw, 420px); }
+  .relItem { flex: 0 0 75vw; }
+  .heroActions { top: 5.5rem; }
+}
